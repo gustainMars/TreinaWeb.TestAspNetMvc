@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using TreinaWeb.TestAspNetMvc.Models;
 
 namespace TreinaWeb.TestAspNetMvc.Controllers
 {
@@ -11,6 +9,13 @@ namespace TreinaWeb.TestAspNetMvc.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Person person)
+        {
+            ViewBag.PersonDetail = person;
+            return View("Greetings");
         }
     }
 }

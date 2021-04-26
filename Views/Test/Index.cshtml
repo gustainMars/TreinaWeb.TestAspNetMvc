@@ -1,9 +1,24 @@
 ﻿@page
-@model TreinaWeb.TestAspNetMvc.Views.Test.IndexModel
+@using TreinaWeb.TestAspNetMvc.Models
+@model Person
+
 @{
-
-    var authorName = "Gustavo";    
-
+    ViewBag.Title = "Example";
 }
 
-<p>Hello, World! It's me, @authorName!</p>
+<h2>Index</h2>
+<br />
+<br />
+<p>Type your name:</p>
+@using (Html.BeginForm("Index", "Test", FormMethod.Post))
+{
+    @Html.LabelFor(p => p.Name);
+    @Html.TextBoxFor(p => p.Name, new { id = "txbName" });
+    <br />
+    @Html.LabelFor(p => p.Age);
+    @Html.TextBoxFor(p => p.Age, new { id = "txbAge" });
+    <br />
+    @Html.LabelFor(p => p.City);
+    @Html.TextBoxFor(p => p.City, new { id = "txbCity" });
+    <input type="submit" id="btnSubmit" value="Send" />
+}
