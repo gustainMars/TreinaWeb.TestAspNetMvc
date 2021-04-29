@@ -1,7 +1,15 @@
-﻿@{
+﻿@using TreinaWeb.TestAspNetMvc.Models
+@model Person
+<head>
+    <link rel="stylesheet" href="~/css/greetings.css" />
+</head>
+@{
     ViewBag.Title = "Greetings";
 }
 
 <h2>Greetings</h2>
 
-<p>Hello, welcome @ViewBag.PersonDetail.Name! You are @ViewBag.PersonDetail.Age years old, right? And you live in @ViewBag.PersonDetail.City!</p>
+<p>Hello, welcome @Model.Name!</p>
+@Html.LabelFor(p => p.Age) is @Model.Age years old, right? 
+And @Html.LabelFor(p => p.City, new { @class = "lowercase" }) is @Model.City, cool!
+

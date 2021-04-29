@@ -9,16 +9,19 @@
 <h2>Index</h2>
 <br />
 <br />
-<p>Type your name:</p>
 @using (Html.BeginForm("Index", "Test", FormMethod.Post))
 {
-    @Html.LabelFor(p => p.Name);
-    @Html.TextBoxFor(p => p.Name, new { id = "txbName" });
+<p>
+    @Html.LabelFor(p => p.Name): &nbsp;&nbsp;
+    @Html.EditorFor(p => p.Name, new { id = "txbName" })
+
     <br />
-    @Html.LabelFor(p => p.Age);
-    @Html.TextBoxFor(p => p.Age, new { id = "txbAge" });
+    @Html.LabelFor(p => p.Age): &nbsp;&nbsp;
+    @Html.EditorFor(p => p.Age, new { id = "txbAge" })
     <br />
-    @Html.LabelFor(p => p.City);
-    @Html.TextBoxFor(p => p.City, new { id = "txbCity" });
+    @Html.LabelFor(p => p.City): &nbsp;&nbsp;
+    @Html.EditorFor(p => p.City, new { id = "txbCity" })
+    <br />
     <input type="submit" id="btnSubmit" value="Send" />
+</p>
 }

@@ -14,8 +14,7 @@ namespace TreinaWeb.TestAspNetMvc.Controllers
         [HttpPost]
         public IActionResult Index(Person person)
         {
-            ViewBag.PersonDetail = person;
-            return View("Greetings");
+            return View("Greetings", person);
         }
     }
 }
