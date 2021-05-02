@@ -10,6 +10,7 @@
 <h2>Greetings</h2>
 
 <p>Hello, welcome @Model.Name!</p>
-@Html.LabelFor(p => p.Age) is @Model.Age years old, right? 
-And @Html.LabelFor(p => p.City, new { @class = "lowercase" }) is @Model.City, cool!
+@Html.LabelFor(p => p.Age) is @Model.Age years old, right?<br />
+@Html.LabelFor(p => p.City) is @Model.City, cool!<br />
+And I'll sent you to @Html.LabelFor(p => p.Email, new { @class = "lowercase" }) (this one: @Model.Email) pretty soon!
 
