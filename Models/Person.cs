@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -30,5 +31,8 @@ namespace TreinaWeb.TestAspNetMvc.Models
         [MinLength(8, ErrorMessage = "The name must be at least 8 characters")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [BindNever]
+        public bool Active { get; set; }
     }
 }
