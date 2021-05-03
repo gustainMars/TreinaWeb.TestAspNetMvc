@@ -11,6 +11,9 @@
 <br />
 @using (Html.BeginForm("Index", "Test", FormMethod.Post))
 {
+
+    @Html.AntiForgeryToken()
+
 <p>
     @Html.ValidationSummary(true)
 

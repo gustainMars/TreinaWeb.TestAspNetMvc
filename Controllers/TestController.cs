@@ -13,6 +13,7 @@ namespace TreinaWeb.TestAspNetMvc.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Index(Person person)
         {
             if (ModelState.IsValid)
