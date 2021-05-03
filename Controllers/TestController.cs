@@ -14,7 +14,10 @@ namespace TreinaWeb.TestAspNetMvc.Controllers
         [HttpPost]
         public IActionResult Index(Person person)
         {
-            return View("Greetings", person);
+            if (ModelState.IsValid)
+                return View("Greetings", person);
+            else
+                return View(person);
         }
     }
 }
