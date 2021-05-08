@@ -14,25 +14,49 @@
 
     @Html.AntiForgeryToken()
 
-<p>
+
     @Html.ValidationSummary(true)
 
-    @Html.LabelFor(p => p.Name): &nbsp;&nbsp;
-    @Html.EditorFor(p => p.Name, new { id = "txbName" })
-    @Html.ValidationMessageFor(p => p.Name)
-    <br />
-    @Html.LabelFor(p => p.Age): &nbsp;&nbsp;
-    @Html.EditorFor(p => p.Age, new { id = "txbAge" })
-    @Html.ValidationMessageFor(p => p.Age)
-    <br />
-    @Html.LabelFor(p => p.City): &nbsp;&nbsp;
-    @Html.EditorFor(p => p.City, new { id = "txbCity" })
-    @Html.ValidationMessageFor(p => p.City)
-    <br />
-    @Html.LabelFor(p => p.Email): &nbsp;&nbsp;
-    @Html.EditorFor(p => p.Email, new { id = "txbEmail" })
-    @Html.ValidationMessageFor(p => p.Email)
-    <br />
-    <input type="submit" id="btnSubmit" value="Send" />
-</p>
-}
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            @Html.LabelFor(p => p.Name)
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            @Html.EditorFor(p => p.Name, new { htmlAttributes = new { id = "txbName", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Name)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            @Html.LabelFor(p => p.Age)
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            @Html.EditorFor(p => p.Age, new { htmlAttributes = new { id = "txbAge", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Age)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+    @Html.LabelFor(p => p.City)
+</div>
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            @Html.EditorFor(p => p.City, new { htmlAttributes = new { id = "txbCity", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.City)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            @Html.LabelFor(p => p.Email)
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            @Html.EditorFor(p => p.Email, new { htmlAttributes = new { id = "txbEmail", @class = "form-control" } })
+            @Html.ValidationMessageFor(p => p.Email)
+        </div>
+    </div>
+
+        <input type="submit" id="btnSubmit" value="Send" class="btn btn-primary"/>
+
+        }
